@@ -41,7 +41,7 @@ def handle_image(event):
         result_text = response.text.strip()
         
     except Exception as e:
-        result_text = "哎呀！辨識失敗了，請確認發票有沒有拍清楚喔～"
+        result_text = f"系統發生錯誤，請把這段文字截圖給小幫手看：\n{str(e)}"
 
     # 3. 將結果傳回 LINE
     line_bot_api.reply_message(
